@@ -33,6 +33,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'Yggdroot/indentLine'
 Plug 'cohama/lexima.vim'
 
+Plug 'tpope/vim-surround'
+
 " trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
 
@@ -56,12 +58,9 @@ set number
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set indentexpr=4
 set autoindent
 set smartindent
 
-noremap <space>h ^
-noremap <space>l $
 map <silent> <C-h> :b#<cr>
 map <silent> <C-j> :bprevious<cr>
 map <silent> <C-k> :bnext<cr>
@@ -122,10 +121,11 @@ set shortmess+=c
 " treesitter
 lua <<EOF
     require'nvim-treesitter.configs'.setup {
-      ensure_installed = "maintained",
-      highlight = {
-        enable = true,
-      },
+        ensure_installed = "maintained",
+        highlight = {
+            enable = true,
+        },
+        additional_vim_regex_highlighting = true,
     }
 EOF
 
