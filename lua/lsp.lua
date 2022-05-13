@@ -24,11 +24,6 @@ end
 
 return function()
     configure(require('lspconfig'), {
-        'eslint',
         'intelephense',
-        'jsonls',
-        'pylsp',
-        'tsserver',
-        'vimls'
     })
 end
