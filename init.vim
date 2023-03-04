@@ -29,24 +29,22 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/glyph-palette.vim'
-
-" status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " fuzzy finder
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" indent
+" status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" utilities
 Plug 'Yggdroot/indentLine'
 Plug 'cohama/lexima.vim'
-
 Plug 'tpope/vim-surround'
-
-" trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
 
 " php
@@ -57,6 +55,10 @@ Plug 'pangloss/vim-javascript'
 
 " typescript
 Plug 'leafgarland/typescript-vim'
+
+" vue
+Plug 'posva/vim-vue'
+Plug 'Shougo/context_filetype.vim'
 
 " blade
 Plug 'jwalton512/vim-blade'
@@ -144,9 +146,6 @@ highlight PmenuSel ctermfg=white ctermbg=gray
 " nvim-lspconfig
 lua << EOF
 
-local on_attach = function(client, bufnr)
-    client.server_capabilities.semanticTokensProvider = nil
-end
 local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
 end
